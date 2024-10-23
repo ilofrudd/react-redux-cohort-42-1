@@ -15,7 +15,8 @@ export const randomJokeSlice = createAppSlice({
   initialState: randomJokeInitialState,
   reducers: create => ({
     deleteJokes: create.reducer((state: RandomJokeSliceInitialState) => {
-      state.data = []
+      state.data = [],
+      state.error = undefined
     }),
     getJokes: create.asyncThunk(
       async (_, { rejectWithValue }) => {
