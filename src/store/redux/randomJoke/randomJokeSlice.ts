@@ -33,7 +33,7 @@ export const randomJokeSlice = createAppSlice({
         }
       },
       {
-        pending: (state: RandomJokeSliceInitialState, action) => {
+        pending: (state: RandomJokeSliceInitialState) => {
           state.error = undefined
           state.isLoading = true
         },
@@ -48,7 +48,7 @@ export const randomJokeSlice = createAppSlice({
             },
           ]
         },
-        rejected: (state: RandomJokeSliceInitialState, action) => {
+        rejected: (state: RandomJokeSliceInitialState) => {
           state.error = "Some Network Error"
           state.isLoading = false
         },
